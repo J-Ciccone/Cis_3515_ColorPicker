@@ -17,15 +17,15 @@
 
     <string-array
         name="colors_select">
-        <item>Azul</item>
-        <item>Cian</item>
-        <item>Gris</item>
-        <item>Verde</item>
-        <item>Verde azulado</item>
-        <item>Marrón</item>
-        <item>Azul marino</item>
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Gray</item>
+        <item>Green</item>
+        <item>Teal</item>
+        <item>Maroon</item>
+        <item>Navy</item>
         <item>Magenta</item>
-        <item>Lima</item>
-        <item>Amarillo</item>
+        <item>Lime</item>
+        <item>Yellow</item>
     </string-array>
 </resources>
