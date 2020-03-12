@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PickAColor</string>
+    <string-array
+        name="color_names">
+        <item>Azul</item>
+        <item>Cian</item>
+        <item>Gris</item>
+        <item>Verde</item>
+        <item>Verde azulado</item>
+        <item>Marrón</item>
+        <item>Azul marino</item>
+        <item>Magenta</item>
+        <item>Lima</item>
+        <item>Amarillo</item>
+    </string-array>
+
+    <string-array
+        name="colors_select">
+        <item>Azul</item>
+        <item>Cian</item>
+        <item>Gris</item>
+        <item>Verde</item>
+        <item>Verde azulado</item>
+        <item>Marrón</item>
+        <item>Azul marino</item>
+        <item>Magenta</item>
+        <item>Lima</item>
+        <item>Amarillo</item>
+    </string-array>
+</resources>

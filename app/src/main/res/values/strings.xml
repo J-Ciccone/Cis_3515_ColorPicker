@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">PickAColor</string>
+    <string-array
+        name="color_names">
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Gray</item>
+        <item>Green</item>
+        <item>Teal</item>
+        <item>Maroon</item>
+        <item>Navy</item>
+        <item>Magenta</item>
+        <item>Lime</item>
+        <item>Yellow</item>
+    </string-array>
+
+    <string-array
+        name="colors_select">
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Gray</item>
+        <item>Green</item>
+        <item>Teal</item>
+        <item>Maroon</item>
+        <item>Navy</item>
+        <item>Magenta</item>
+        <item>Lime</item>
+        <item>Yellow</item>
+    </string-array>
 </resources>

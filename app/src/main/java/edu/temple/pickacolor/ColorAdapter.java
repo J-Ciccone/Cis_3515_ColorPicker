@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 
 public class ColorAdapter extends BaseAdapter {
-
     Context context;
-    String[] colors;
+    private String[] colorNames;
+    private String[] colors;
 
-    public ColorAdapter(Context context, String[] colors) {
+    public ColorAdapter(Context context) {
         this.context = context;
-        this.colors = colors;
+        this.colorNames = context.getResources().getStringArray(R.array.color_names);
+        this.colors = context.getResources().getStringArray(R.array.colors_select);
     }
 
     @Override
@@ -26,13 +27,14 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return colors[position];
+        return colorNames[position];
     }
 
-     @Override
+    @Override
     public long getItemId(int position) {
         return 0;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -43,7 +45,7 @@ public class ColorAdapter extends BaseAdapter {
             textView = new TextView(context);
         }
 
-        textView.setText(colors[position]);
+        textView.setText(colorNames[position]);
         textView.setBackgroundColor(Color.parseColor(colors[position]));
 
         return textView;
