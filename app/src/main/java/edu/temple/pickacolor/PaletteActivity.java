@@ -13,39 +13,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class PaletteActivity extends AppCompatActivity {
-    Spinner spinner;
+public class PaletteActivity extends AppCompatActivity implements PaletteFragment.OnColorSelectedListener  {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final String[] androidColors = getResources().getStringArray(R.array.colors_select);
+        final String[] colorNames = getResources().getStringArray(R.array.color_names);
 
-        ColorAdapter colorAdapter = new ColorAdapter(PaletteActivity.this);
-        spinner = findViewById(R.id.spinner);
+        PaletteFragment paletteFragment = PaletteFragment.newInstance(colorNames,androidColors);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.activity_main, paletteFragment)
+                .commit();
+    }
 
-        spinner.setAdapter(colorAdapter);
-        spinner.setSelection(0 , false);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                TextView colorView = (TextView)view;
-                Intent myIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                myIntent.putExtra("colorName", colorView.getText());
-                myIntent.putExtra("colorValue", ((ColorDrawable)colorView.getBackground()).getColor());
-                startActivity(myIntent);
-               }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Intent i = new Intent(getApplicationContext(), CanvasActivity.class);
-                startActivity(i);
-            }
-        });
-
+    @Override
+    public void onColorSelected(int position) {
 
     }
 }
