@@ -47,7 +47,7 @@ public class ColorAdapter extends BaseAdapter {
 
         textView.setText(colorNames[position]);
         textView.setBackgroundColor(Color.parseColor(colors[position]));
-
+        textView.setTextColor(Color.LTGRAY);
         return textView;
     }
 }

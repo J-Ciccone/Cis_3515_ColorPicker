@@ -4,19 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaletteActivity"
+    tools:context=".MainActivity"
     android:id="@+id/activity_main">
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start|center_vertical"
-        android:minHeight="44dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="Fake Spinner"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="418dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

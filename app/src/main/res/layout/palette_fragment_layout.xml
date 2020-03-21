@@ -17,6 +17,8 @@
         android:dropDownWidth="match_parent"
         android:spinnerMode="dropdown"
         android:visibility="visible"
+        android:textAlignment="center"
+        tools:text="COLOR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

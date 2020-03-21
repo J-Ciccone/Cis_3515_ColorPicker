@@ -13,20 +13,18 @@ import androidx.fragment.app.Fragment;
 public class PaletteFragment extends Fragment {
     String[] colorNames;
     String[] colors;
+    int selected = 0;
+
     private static final String COLOR_NAMES = "colorNames";
     private static final String COLORS = "colors";
     OnColorSelectedListener colorSelectedListener;
 
-    public PaletteFragment() {
-        // Required empty public constructor
+    public interface OnColorSelectedListener {
+        void onColorSelected(int position);
     }
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param colors String.
-     * @return A new instance of fragment PaletteFragment.
-     */
+    public PaletteFragment() {
+    }
+
     public static PaletteFragment newInstance(String[] colorNames, String[] colors) {
         PaletteFragment paletteFragment = new PaletteFragment();
         Bundle args = new Bundle();
@@ -34,10 +32,6 @@ public class PaletteFragment extends Fragment {
         args.putStringArray(COLORS, colors);
         paletteFragment.setArguments(args);
         return paletteFragment;
-    }
-
-    public interface OnColorSelectedListener {
-        void onColorSelected(int position);
     }
 
     @Override
@@ -55,17 +49,15 @@ public class PaletteFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.palette_fragment_layout, container, false);
         Spinner spinner = view.findViewById(R.id.spinner);
-
         spinner.setAdapter(new ColorAdapter(getActivity()));
-        spinner.setSelection(0, false);
+        spinner.setSelection(selected, false);
 
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-
+                selected = position;
                 colorSelectedListener.onColorSelected(position);
-
             }
 
             @Override
